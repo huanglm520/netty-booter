@@ -1,6 +1,6 @@
 package com.nettybooter.framework.test;
 
-import com.nettybooter.framework.HttpNettyServer;
+import com.nettybooter.framework.ReactiveHttpNettyServer;
 import com.nettybooter.framework.NettyServerStarter;
 
 /**
@@ -9,7 +9,7 @@ import com.nettybooter.framework.NettyServerStarter;
  * author: huanglm520
  * see: https://github.com/huanglm520
  */
-public class NettyServerTest extends HttpNettyServer {
+public class NettyServerTestReactive extends ReactiveHttpNettyServer {
 
     @Override
     public String appName() {
@@ -22,6 +22,6 @@ public class NettyServerTest extends HttpNettyServer {
     }
 
     public static void main(String[] args) {
-        NettyServerStarter.start(NettyServerTest.class);
+        NettyServerStarter.start(NettyServerTestReactive.class);
     }
 }

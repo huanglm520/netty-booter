@@ -1,8 +1,7 @@
 package com.nettybooter.framework;
 
-import com.nettybooter.framework.handler.HttpHandler;
+import com.nettybooter.framework.handler.ReactiveHttpHandler;
 import io.netty.bootstrap.ServerBootstrap;
-import io.netty.channel.Channel;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
 import io.netty.channel.EventLoopGroup;
@@ -24,7 +23,7 @@ import java.net.InetSocketAddress;
  * see: https://github.com/huanglm520
  */
 @Slf4j
-public abstract class HttpNettyServer implements NettyServer {
+public abstract class ReactiveHttpNettyServer implements NettyServer {
 
     @Override
     public void initServer(ServerBootstrap serverBootstrap) {
@@ -51,7 +50,7 @@ public abstract class HttpNettyServer implements NettyServer {
                                 .addLast("decoder", new HttpRequestDecoder())
                                 .addLast("encoder", new HttpResponseEncoder())
                                 .addLast("aggregator", new HttpObjectAggregator(512 * 1024))
-                                .addLast(new HttpHandler());
+                                .addLast(new ReactiveHttpHandler());
                     }
                 });
         Try.of(() -> serverBootstrap.bind("0.0.0.0", port()))

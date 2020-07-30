@@ -25,8 +25,6 @@ public interface ServerRequest {
      */
     HttpMethod getMethod();
 
-    HttpPr
-
     /**
      * 获取所有请求头
      * @return

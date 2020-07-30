@@ -18,7 +18,7 @@ import reactor.core.publisher.Mono;
  * author: huanglm520
  * see: https://github.com/huanglm520
  */
-public class HttpHandler extends SimpleChannelInboundHandler<FullHttpRequest> {
+public class ReactiveHttpHandler extends SimpleChannelInboundHandler<FullHttpRequest> {
 
     @Override
     protected void channelRead0(ChannelHandlerContext channelHandlerContext, FullHttpRequest fullHttpRequest) {
