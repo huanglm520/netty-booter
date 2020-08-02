@@ -10,5 +10,5 @@ import java.lang.reflect.Method;
  */
 public interface ProxyFunction {
 
-    Object apply(Method method, Object object, Object[] args);
+    Object apply(Method method, Object object, Object[] args) throws Throwable;
 }
